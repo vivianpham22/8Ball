@@ -22,3 +22,81 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/* THE BALL */
+.position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+}
+
+.ball {
+  height: 400px;
+  width: 400px;
+  background: black;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.fortune {
+  position: absolute;
+  background: white;
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  box-shadow: black;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.triangle{
+  transform: translate(-50%,-50%) rotate(5deg);
+  position: absolute;
+  width: 0px; 
+  height: 0px;
+  left: 50%;
+  top: 60%;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-top: 90px solid rgba(60,10,120,0.0);
+  opacity: 0;
+  transition: ease-in all 0.2s;
+}
+
+.textbox{
+  font: 400 11px;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+  -webkit-transform: translate(-50%,-50%) rotate(5deg);
+  transform: translate(-50%,-50%) rotate(5deg);
+  position: absolute;
+  text-transform: uppercase;
+  width: 48px; 
+  height: 50px;
+  left: 50%;
+  top: 53%;
+  opacity: 0;
+  transition: ease-in all 0.2s;
+}
+
+.ball:hover .textbox{
+   opacity: 1;
+   transform: translate(-50%,-50%) rotate(0deg);
+   transition: ease-in all 0.2s;
+}
+
+.ball:hover .triangle {  
+  top: 53%;
+  border-top: 90px solid rgba(60,10,120,0.9);
+  transform: translate(-50%,-50%) rotate(0deg);
+  opacity: 1;
+  transition: ease-in all 0.2s;
+
+}
